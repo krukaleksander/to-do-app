@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Chilanka|Oswald&display=swap&subset=latin-ext');
+$headingColor: #cdc0c0;
 
 * {
   margin: 0;
@@ -12,7 +13,7 @@
 
   h1 {
     font-family: 'Chilanka', cursive;
-    color: #cdc0c0;
+    color: $headingColor;
     text-align: center;
     padding-top: 20px;
   }
@@ -23,12 +24,20 @@
     font-family: 'Oswald', Arial, sans-serif;
 
     .wrapNewTask {
-      max-width: 300px;
+      max-width: 310px;
       margin: 10px auto;
+
+      .add {
+        display: inline-block;
+        color: $headingColor;
+        margin-left: 10px;
+        font-size: 25px;
+      }
     }
 
     .newTask {
       font-size: 20px;
+
 
     }
   }

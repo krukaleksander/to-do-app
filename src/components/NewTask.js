@@ -3,7 +3,7 @@ const NewTask = () => {
     return (
         <div className="wrapNewTask">
             <input className='newTask' type="text" placeholder='new task' />
-            <p className="add"><i class="fas fa-plus-square"></i></p>
+            <p className="add"><i className="fas fa-plus-square"></i></p>
         </div>
     );
 }
