@@ -3,6 +3,7 @@ import './App.scss';
 import NewTask from './components/NewTask'
 
 function App() {
+
   return (
     <>
       <div className="wrap">
