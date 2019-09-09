@@ -7,21 +7,24 @@ const NewTask = () => {
 
     });
 
-    const [desc, setDesc] = useState('');
-    const [makeId, setMakeId] = useState(1);
+    let [desc, setDesc] = useState('');
+    const [makeId, setMakeId] = useState(0);
 
-    const handleCreate = () => {
-        setMakeId(makeId + 1);
-
+    useEffect(() => {
         setNewTask({
             id: makeId,
             description: desc
-        });
-        document.querySelector('input.newTask').value = '';
+        })
+    }, [makeId, desc]);
+    const handleCreate = () => {
+        let inputVal = document.querySelector('input.newTask').value;
+        setMakeId(makeId + 1);
+        setDesc(desc = inputVal)
+        inputVal = '';
     }
     return (
         <div className="wrapNewTask">
-            <input className='newTask' type="text" placeholder='new task' onChange={(e) => setDesc(e.target.value)} />
+            <input className='newTask' type="text" placeholder='new task' />
             <p className="add" onClick={() => handleCreate()}><i className="fas fa-plus-square"></i></p>
         </div>
     );
