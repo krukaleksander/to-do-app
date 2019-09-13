@@ -1,14 +1,24 @@
 import React from 'react';
+import Task from './Task';
 
-const TaskList = () => {
+const TaskList = (props) => {
 
+    const tasks = props.tasks.map(task => <Task key={task.id} task={task} deleteTask={props.deleteTask} change={props.change} />)
 
     return (
         <div className="task-list">
-            <p>Lista wyrenderowanych zadań :)</p>
+            <div className="not-done">
+                <h2>Zadania do zrobienia</h2>
+                {tasks}
+            </div>
+            <hr />
+            <div className="done">
+                <h2>Zadania zrobione</h2>
+            </div>
 
-            <button onClick={() => console.log()}>wyświetl</button>
-        </div>
+
+
+        </div >
     );
 }
 
