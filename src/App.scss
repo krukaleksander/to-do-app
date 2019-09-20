@@ -33,7 +33,7 @@ body {
   }
 
   .task-list {
-    background-color: #9932cc87;
+    background-color: rgb(97, 0, 157);
     border: 2px solid white;
     color: $headingColor;
     padding: 10px;
@@ -119,6 +119,10 @@ body {
 }
 
 @media (min-width: 1023px) {
+  .wrap .list .newTask {
+    max-width: 388px;
+  }
+
   .wrap {
     max-width: 80vw;
     margin: 0 auto;
