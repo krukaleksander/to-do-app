@@ -50,14 +50,16 @@ class App extends React.Component {
   taskLocal() {
     let stateVal = JSON.stringify(this.state.tasks);
     window.localStorage.setItem('todoappak', stateVal);
-    console.log(stateVal);
+
   };
   localToTask = () => {
-    const tasks = Array.from(JSON.parse(window.localStorage.todoappak));
-    this.setState({
-      tasks
-    })
-    console.log(this.state.tasks);
+    if (window.localStorage.todoappak !== undefined) {
+      const tasks = Array.from(JSON.parse(window.localStorage.todoappak));
+      this.setState({
+        tasks
+      })
+    }
+
   }
 
   render() {
@@ -70,7 +72,6 @@ class App extends React.Component {
           <div className="list">
             <Add add={this.newTask} />
             <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask} change={this.changeDone} getLocal={this.taskLocal} />
-            <button onClick={this.localToTask}>Załaduj</button>
           </div>
         </div>
       </>
