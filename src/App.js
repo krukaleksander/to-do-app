@@ -29,7 +29,7 @@ class App extends React.Component {
     this.setState({
       tasks
     })
-  }
+  };
   newTask = (val, checked) => {
     const task = {
       id: this.count,
@@ -41,10 +41,18 @@ class App extends React.Component {
     this.setState(prevState => ({
       tasks: [...prevState.tasks, task]
     }))
+
+
     this.count++
     return true
 
-  }
+  };
+  taskLocal() {
+    let stateVal = JSON.stringify(this.state.tasks);
+    window.localStorage.setItem('todoappak', stateVal);
+    console.log(stateVal);
+  };
+
   render() {
     return (
       <>
@@ -52,12 +60,17 @@ class App extends React.Component {
           <h1 className="webTitle">To Do List</h1>
           <div className="list">
             <Add add={this.newTask} />
-            <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask} change={this.changeDone} />
+            <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask} change={this.changeDone} getLocal={this.taskLocal} />
           </div>
         </div>
       </>
 
     );
+  }
+  componentDidUpdate(prevProps) {
+    // Typowy sposób użycia (nie zapomnij porównać właściwości):
+    this.taskLocal()
+
   }
 }
 
