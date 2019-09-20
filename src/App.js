@@ -52,25 +52,36 @@ class App extends React.Component {
     window.localStorage.setItem('todoappak', stateVal);
     console.log(stateVal);
   };
+  localToTask = () => {
+    const tasks = Array.from(JSON.parse(window.localStorage.todoappak));
+    this.setState({
+      tasks
+    })
+    console.log(this.state.tasks);
+  }
 
   render() {
+
     return (
+
       <>
         <div className="wrap">
           <h1 className="webTitle">To Do List</h1>
           <div className="list">
             <Add add={this.newTask} />
             <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask} change={this.changeDone} getLocal={this.taskLocal} />
+            <button onClick={this.localToTask}>Załaduj</button>
           </div>
         </div>
       </>
 
     );
   }
-  componentDidUpdate(prevProps) {
-    // Typowy sposób użycia (nie zapomnij porównać właściwości):
+  componentDidMount() {
+    this.localToTask()
+  }
+  componentDidUpdate() {
     this.taskLocal()
-
   }
 }
 
