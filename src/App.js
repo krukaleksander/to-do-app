@@ -50,6 +50,8 @@ class App extends React.Component {
   taskLocal() {
     let stateVal = JSON.stringify(this.state.tasks);
     window.localStorage.setItem('todoappak', stateVal);
+    console.log(stateVal)
+
 
   };
   localToTask = () => {
@@ -58,6 +60,9 @@ class App extends React.Component {
       this.setState({
         tasks
       })
+      let ids = Math.max(...tasks.map(item => item.id));
+      this.count = ids + 1;
+
     }
 
   }
