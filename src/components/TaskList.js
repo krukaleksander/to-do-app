@@ -4,8 +4,8 @@ import Task from './Task';
 const TaskList = (props) => {
     const notDone = props.tasks.filter(task => !task.done);
     const done = props.tasks.filter(task => task.done);
-    const notDoneTasks = notDone.map(task => <Task key={task.id} task={task} deleteTask={props.deleteTask} change={props.change} />)
-    const doneTasks = done.map(task => <Task key={task.id} task={task} deleteTask={props.deleteTask} change={props.change} />)
+    const notDoneTasks = notDone.map(task => <Task key={task.id} task={task} handleExtras={props.handleExtras} deleteTask={props.deleteTask} change={props.change} />)
+    const doneTasks = done.map(task => <Task key={task.id} task={task} handleExtras={props.handleExtras} deleteTask={props.deleteTask} change={props.change} />)
 
     return (
         <div className="task-list">

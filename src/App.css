@@ -48,12 +48,14 @@ body {
 }
 
 .wrap .task-list .task-done,
+.wrap .task-list .extra-info,
 .wrap .task-list .delete-task {
   font-size: 20px;
   padding: 5px;
   background: none;
   border: none;
   color: #cdc0c0;
+  cursor: pointer;
 }
 
 .wrap .list {
@@ -75,6 +77,25 @@ body {
 }
 
 .wrap .list .newTask {
+  font-size: 20px;
+}
+
+div.extras {
+  display: none;
+  background: rgba(231, 181, 181, 0.97);
+  width: 80%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border: 2px solid black;
+}
+
+div.extras .fas {
+  position: absolute;
+  top: 7px;
+  right: 7px;
   font-size: 20px;
 }
 

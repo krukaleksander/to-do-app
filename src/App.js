@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import Add from './components/Add'
 import TaskList from './components/TaskList'
+import Extras from './components/Extras'
 
 class App extends React.Component {
   count = 0;
@@ -50,9 +51,6 @@ class App extends React.Component {
   taskLocal() {
     let stateVal = JSON.stringify(this.state.tasks);
     window.localStorage.setItem('todoappak', stateVal);
-    console.log(stateVal)
-
-
   };
   localToTask = () => {
     if (window.localStorage.todoappak !== undefined) {
@@ -66,7 +64,10 @@ class App extends React.Component {
     }
 
   }
-
+  handleExtras = () => {
+    const extras = document.querySelector('div.extras');
+    extras.style.display = 'block';
+  }
   render() {
 
     return (
@@ -76,7 +77,8 @@ class App extends React.Component {
           <h1 className="webTitle">To Do List</h1>
           <div className="list">
             <Add add={this.newTask} />
-            <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask} change={this.changeDone} getLocal={this.taskLocal} />
+            <TaskList tasks={this.state.tasks} handleExtras={this.handleExtras} deleteTask={this.deleteTask} change={this.changeDone} getLocal={this.taskLocal} />
+            <Extras />
           </div>
         </div>
       </>
