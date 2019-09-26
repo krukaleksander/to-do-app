@@ -3,7 +3,8 @@ const Task = (props) => {
     const { desc, id, done, important } = props.task;
     const { deleteTask, change } = props;
     const importantLook = {
-        color: 'red'
+        textTransform: 'uppercase',
+        color: 'red',
     }
     return (
         <div className="single-task">

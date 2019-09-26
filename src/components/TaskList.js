@@ -15,9 +15,9 @@ const TaskList = (props) => {
             </div>
             <hr />
             <div className="done">
-                {done.length > 7 && <p className="length-info">Aplikacja wyświetla 7 ostatnich zadań</p>}
+                {done.length > 7 && <p className="length-info">Aplikacja wyświetla 7 pierwszych zadań</p>}
                 <h2>Zadania zrobione <span>{doneTasks.length}</span></h2>
-                {doneTasks.slice(0, 5)}
+                {doneTasks.slice(0, 7)}
             </div>
 
 
