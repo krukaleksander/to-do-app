@@ -66,7 +66,9 @@ class App extends React.Component {
   }
   handleExtras = () => {
     const extras = document.querySelector('div.extras');
+    const blured = document.querySelector('div.blured');
     extras.style.display = 'block';
+    blured.style.display = 'block';
   }
   render() {
 
