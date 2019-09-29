@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Extras = () => {
+const Extras = (props) => {
+    const { id, extras } = props.tasks;
     const closer = () => {
         document.querySelector('div.extras').style.display = 'none';
         document.querySelector('div.blured').style.display = 'none';
@@ -8,9 +9,11 @@ const Extras = () => {
     return (
         <>
             <div className="blured"></div>
-            <div className="extras">
+            <div className="extras" data-which="">
                 <i className="fas fa-window-close" onClick={() => closer()}></i>
-                <p>Tutaj już wkrótce będziesz mógł umieścić dodatkowe informacje o zadaniu, np listę zakupów</p>
+                <input className="extras-in" placeholder="extra info" type="text" onChange={props.extrasChange} />
+                <p className="addExtra" onClick={() => props.handleSetExtas()}><i className="fas fa-plus-square"></i></p>
+                <p className="extras-par"></p>
             </div>
         </>
     );

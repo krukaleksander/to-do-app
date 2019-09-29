@@ -6,6 +6,7 @@ import Extras from './components/Extras'
 
 class App extends React.Component {
   count = 0;
+  extras = "";
   state = {
     tasks: [
 
@@ -21,6 +22,7 @@ class App extends React.Component {
     })
   }
   changeDone = (id) => {
+    console.log(id);
     const tasks = Array.from(this.state.tasks);
     tasks.forEach(task => {
       if (task.id === id) {
@@ -31,12 +33,14 @@ class App extends React.Component {
       tasks
     })
   };
+
   newTask = (val, checked) => {
     const task = {
       id: this.count,
       desc: val,
       important: checked,
-      done: false
+      done: false,
+      extras: ""
     }
 
     this.setState(prevState => ({
@@ -64,11 +68,38 @@ class App extends React.Component {
     }
 
   }
-  handleExtras = () => {
+
+  handleExtras = (id) => {
     const extras = document.querySelector('div.extras');
     const blured = document.querySelector('div.blured');
     extras.style.display = 'block';
+    extras.setAttribute("data-which", id);
     blured.style.display = 'block';
+  }
+  extrasChange = (e) => {
+    this.extras = e.target.value;
+  }
+  handleSetExtas = () => {
+    const extras = document.querySelector('div.extras');
+    let id = parseInt(extras.getAttribute("data-which"));
+    const tasks = Array.from(this.state.tasks);
+    tasks.forEach(task => {
+      if (task.id === id) {
+        task.extras = this.extras;
+      }
+    })
+    this.setState({
+      tasks
+    })
+    // const upTasks = Array.from(this.state.tasks);
+    // upTasks.filter(task => {
+    //   if (task.id === id) {
+    //     document.querySelector('p.extras-par').innerText = task.extras;
+    //   };
+    // })
+
+    document.querySelector('input.extras-in').value = "";
+
   }
   render() {
 
@@ -80,7 +111,7 @@ class App extends React.Component {
           <div className="list">
             <Add add={this.newTask} />
             <TaskList tasks={this.state.tasks} handleExtras={this.handleExtras} deleteTask={this.deleteTask} change={this.changeDone} getLocal={this.taskLocal} />
-            <Extras />
+            <Extras tasks={this.state.tasks} changeExtras={this.changeExtras} extrasChange={this.extrasChange} handleSetExtas={this.handleSetExtas} />
           </div>
         </div>
       </>

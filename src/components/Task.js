@@ -9,7 +9,7 @@ const Task = (props) => {
     return (
         <div className="single-task">
             <span className="one-task" style={important && !done ? importantLook : null}>{desc}  </span>
-            {!done && <button className="task-done" onClick={() => change(id)}><i className="fas fa-thumbs-up"></i></button>}<button className='extra-info' onClick={() => handleExtras()}><i className="fas fa-book"></i></button><button className="delete-task" onClick={() => deleteTask(id)}><i className="fas fa-times-circle"></i></button>
+            {!done && <button className="task-done" onClick={() => change(id)}><i className="fas fa-thumbs-up"></i></button>}<button className='extra-info' onClick={() => handleExtras(id)}><i className="fas fa-book"></i></button><button className="delete-task" onClick={() => deleteTask(id)}><i className="fas fa-times-circle"></i></button>
         </div>
 
     );
