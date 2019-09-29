@@ -2,10 +2,8 @@ import React from 'react';
 
 const Extras = () => {
     const closer = () => {
-        document.querySelector('i.fa-window-close').addEventListener('click', () => {
-            document.querySelector('div.extras').style.display = 'none';
-            document.querySelector('div.blured').style.display = 'none';
-        })
+        document.querySelector('div.extras').style.display = 'none';
+        document.querySelector('div.blured').style.display = 'none';
     }
     return (
         <>
