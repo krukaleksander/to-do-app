@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Extras = (props) => {
-    const { id, extras } = props.tasks;
     const closer = () => {
         document.querySelector('div.extras').style.display = 'none';
         document.querySelector('div.blured').style.display = 'none';

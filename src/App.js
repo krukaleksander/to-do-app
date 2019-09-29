@@ -68,11 +68,21 @@ class App extends React.Component {
     }
 
   }
-
+  upPar = (id) => {
+    const upTasks = Array.from(this.state.tasks);
+    upTasks.filter(function (task) {
+      if (task.id === id) {
+        document.querySelector('p.extras-par').innerText = task.extras;
+      };
+      return true;
+    })
+  }
   handleExtras = (id) => {
     const extras = document.querySelector('div.extras');
     const blured = document.querySelector('div.blured');
+    this.upPar(id);
     extras.style.display = 'block';
+
     extras.setAttribute("data-which", id);
     blured.style.display = 'block';
   }
@@ -91,12 +101,7 @@ class App extends React.Component {
     this.setState({
       tasks
     })
-    // const upTasks = Array.from(this.state.tasks);
-    // upTasks.filter(task => {
-    //   if (task.id === id) {
-    //     document.querySelector('p.extras-par').innerText = task.extras;
-    //   };
-    // })
+    this.upPar(id);
 
     document.querySelector('input.extras-in').value = "";
 
