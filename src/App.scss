@@ -78,6 +78,10 @@ body {
         color: $headingColor;
         margin-left: 10px;
         font-size: 25px;
+
+        .fa-plus-square {
+          vertical-align: middle;
+        }
       }
 
     }
@@ -119,6 +123,23 @@ div.extras {
     right: 7px;
     font-size: 20px;
   }
+
+  .addExtra {
+    max-width: 40px;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 3px;
+
+  }
+
+  .fa-plus-square {
+    vertical-align: middle;
+  }
+
+  .extras-in {
+    font-size: 15px;
+    max-width: 180px;
+  }
 }
 
 @keyframes task {
@@ -131,10 +152,41 @@ div.extras {
   }
 }
 
+@media (min-width: 319px) and (orientation: landscape) {
+  div.extras {
+    width: 70%;
+
+    .extras-in {
+      max-width: 200px;
+    }
+  }
+
+}
+
 @media (min-width: 410px) and (orientation: portrait) {
   .wrap .list .newTask {
     font-size: 21px;
   }
+}
+
+@media (min-width: 639px) and (orientation: landscape) {
+  div.extras {
+
+    .extras-in {
+      max-width: 360px;
+      width: 360px;
+      font-size: 21px;
+    }
+
+    .fa-plus-square {
+      font-size: 28px;
+    }
+
+    .extras-par {
+      font-size: 22px;
+    }
+  }
+
 }
 
 @media (min-width: 765px) {
@@ -147,6 +199,32 @@ div.extras {
 
     .add {
       font-size: 35px;
+    }
+  }
+}
+
+@media (min-width: 767px) and (orientation: portrait) {
+  div.extras {
+    top: 20%;
+    min-height: 130px;
+
+    .extras-in {
+      max-width: none;
+      width: 440px;
+      font-size: 25px;
+    }
+
+    .extras-par {
+      font-size: 25px;
+    }
+
+    .fa-plus-square {
+      vertical-align: -3px;
+      font-size: 30px;
+    }
+
+    .fa-window-close {
+      font-size: 30px;
     }
   }
 }

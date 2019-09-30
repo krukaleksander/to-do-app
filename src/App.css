@@ -76,6 +76,10 @@ body {
   font-size: 25px;
 }
 
+.wrap .list .wrapNewTask .add .fa-plus-square {
+  vertical-align: middle;
+}
+
 .wrap .list .newTask {
   font-size: 20px;
 }
@@ -111,6 +115,22 @@ div.extras .fa-window-close {
   font-size: 20px;
 }
 
+div.extras .addExtra {
+  max-width: 40px;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 3px;
+}
+
+div.extras .fa-plus-square {
+  vertical-align: middle;
+}
+
+div.extras .extras-in {
+  font-size: 15px;
+  max-width: 180px;
+}
+
 @keyframes task {
   from {
     opacity: 0;
@@ -120,9 +140,32 @@ div.extras .fa-window-close {
   }
 }
 
+@media (min-width: 319px) and (orientation: landscape) {
+  div.extras {
+    width: 70%;
+  }
+  div.extras .extras-in {
+    max-width: 200px;
+  }
+}
+
 @media (min-width: 410px) and (orientation: portrait) {
   .wrap .list .newTask {
     font-size: 21px;
+  }
+}
+
+@media (min-width: 639px) and (orientation: landscape) {
+  div.extras .extras-in {
+    max-width: 360px;
+    width: 360px;
+    font-size: 21px;
+  }
+  div.extras .fa-plus-square {
+    font-size: 28px;
+  }
+  div.extras .extras-par {
+    font-size: 22px;
   }
 }
 
@@ -135,6 +178,28 @@ div.extras .fa-window-close {
   }
   .wrap .list .wrapNewTask .add {
     font-size: 35px;
+  }
+}
+
+@media (min-width: 767px) and (orientation: portrait) {
+  div.extras {
+    top: 20%;
+    min-height: 130px;
+  }
+  div.extras .extras-in {
+    max-width: none;
+    width: 440px;
+    font-size: 25px;
+  }
+  div.extras .extras-par {
+    font-size: 25px;
+  }
+  div.extras .fa-plus-square {
+    vertical-align: -3px;
+    font-size: 30px;
+  }
+  div.extras .fa-window-close {
+    font-size: 30px;
   }
 }
 
