@@ -33,9 +33,11 @@ class Add extends Component {
     render() {
         return (
             <div className="wrapNewTask">
-                <input className='newTask' type="text" placeholder='new task' value={this.state.val} onChange={this.handleChange} />
-                <p className="add" onClick={this.handleClick}><i className="fas fa-plus-square"></i></p>
-                <input className="checkbox" type="checkbox" checked={this.state.checked} id="important" onChange={this.handleCheck} /><label htmlFor="important"> Ważne!</label>
+                <input className='newTask' id="add" type="text" placeholder='new task' value={this.state.val} onChange={this.handleChange} />
+                <label htmlFor="add"><p className="add" onClick={this.handleClick}><i className="fas fa-plus-square"></i></p></label>
+                <div className="checkbox">
+                    <input className="checkbox" type="checkbox" checked={this.state.checked} id="important" onChange={this.handleCheck} /><label htmlFor="important"> Ważne!</label>
+                </div>
             </div>
         );
     }

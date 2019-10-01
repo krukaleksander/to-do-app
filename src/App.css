@@ -114,6 +114,12 @@ div.extras .fa-window-close {
   top: 7px;
   right: 7px;
   font-size: 20px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+div.extras .fa-window-close:hover {
+  transform: scale(1.1);
 }
 
 div.extras .addExtra {
@@ -125,6 +131,12 @@ div.extras .addExtra {
 
 div.extras .fa-plus-square {
   vertical-align: middle;
+  cursor: pointer;
+  transition: .2s;
+}
+
+div.extras .fa-plus-square:hover {
+  transform: scale(1.1);
 }
 
 div.extras .extras-in {
@@ -175,7 +187,8 @@ div.extras .extras-in {
     font-size: 30px;
   }
   .wrap .list .wrapNewTask {
-    max-width: 430px;
+    max-width: 800px;
+    text-align: center;
   }
   .wrap .list .wrapNewTask .add {
     font-size: 35px;

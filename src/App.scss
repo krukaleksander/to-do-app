@@ -123,6 +123,12 @@ div.extras {
     top: 7px;
     right: 7px;
     font-size: 20px;
+    cursor: pointer;
+    transition: .2s;
+  }
+
+  .fa-window-close:hover {
+    transform: scale(1.1);
   }
 
   .addExtra {
@@ -135,6 +141,12 @@ div.extras {
 
   .fa-plus-square {
     vertical-align: middle;
+    cursor: pointer;
+    transition: .2s;
+  }
+
+  .fa-plus-square:hover {
+    transform: scale(1.1)
   }
 
   .extras-in {
@@ -196,7 +208,8 @@ div.extras {
   }
 
   .wrap .list .wrapNewTask {
-    max-width: 430px;
+    max-width: 800px;
+    text-align: center;
 
     .add {
       font-size: 35px;
