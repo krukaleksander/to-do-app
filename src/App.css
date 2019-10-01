@@ -106,6 +106,7 @@ div.extras {
   padding: 10px;
   border: 2px solid black;
   z-index: 2;
+  box-shadow: 6px 6px black;
 }
 
 div.extras .fa-window-close {
@@ -210,5 +211,24 @@ div.extras .extras-in {
   .wrap {
     max-width: 80vw;
     margin: 0 auto;
+  }
+  div.extras {
+    top: 20%;
+    min-height: 130px;
+  }
+  div.extras .extras-in {
+    max-width: none;
+    width: 440px;
+    font-size: 25px;
+  }
+  div.extras .extras-par {
+    font-size: 25px;
+  }
+  div.extras .fa-plus-square {
+    vertical-align: -3px;
+    font-size: 30px;
+  }
+  div.extras .fa-window-close {
+    font-size: 30px;
   }
 }
